@@ -1,14 +1,15 @@
 package com.github.maxopoly.MemeMana;
 
-import com.github.maxopoly.MemeMana.model.ManaGainStat;
-import com.github.maxopoly.MemeMana.model.MemeManaPouch;
-import com.devotedmc.ExilePearl.ExilePearlPlugin;
-import com.civclassic.altmanager.AltManager;
-import org.bukkit.Bukkit;
 import java.util.Map;
 import java.util.UUID;
-import java.util.Date;
+
+import org.bukkit.Bukkit;
+
+import com.github.maxopoly.MemeMana.model.ManaGainStat;
+import com.github.maxopoly.MemeMana.model.MemeManaPouch;
+
 import net.md_5.bungee.api.ChatColor;
+import vg.civcraft.mc.prisonpearl.PrisonPearlPlugin;
 
 public class PlayerActivityManager {
 
@@ -34,7 +35,7 @@ public class PlayerActivityManager {
 		ManaGainStat stat = getForPlayer(owner);
 		if(stat.update()) {
 			MemeManaPlugin.getInstance().getDAO().updateManaStat(owner,stat);
-			if(ExilePearlPlugin.getApi().isPlayerExiled(player)){
+			if(PrisonPearlPlugin.getPrisonPearlManager().isImprisoned(player)){
 				Bukkit.getPlayer(player).sendMessage(ChatColor.GRAY + "You didn't get any mana because you are pearled");
 			}else{
 				giveOutReward(player,stat.getPayout());

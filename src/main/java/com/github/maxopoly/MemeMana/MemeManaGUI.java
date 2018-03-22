@@ -1,4 +1,4 @@
-package com.github.maxopoly.MemeMana.command;
+package com.github.maxopoly.MemeMana;
 
 import com.github.maxopoly.MemeMana.MemeManaPlugin;
 import com.github.maxopoly.MemeMana.model.MemeManaPouch;

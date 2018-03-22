@@ -1,8 +1,8 @@
 package com.github.maxopoly.MemeMana;
 
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.ConfigurationSection;
-import com.devotedmc.ExilePearl.PearlType;
+import org.bukkit.configuration.file.FileConfiguration;
+
 import vg.civcraft.mc.civmodcore.util.ConfigParsing;
 
 public class MemeManaConfig {
@@ -78,17 +78,4 @@ public class MemeManaConfig {
 		return manaWaitTime;
 	}
 
-	/**
-	 * @return How much a unit of mana refills a pearl of the given type
-	 */
-	public int getPearlRefillAmount(PearlType type) {
-		return plugin.getConfig().getInt("pearlRefillAmount." + type, 5);
-	}
-
-	/**
-	 * @return How much it costs to upgrade Exile => Prison pearl
-	 */
-	public int getPearlUpgradeAmount() {
-		return plugin.getConfig().getInt("pearlUpgradeAmount", 10);
-	}
 }
